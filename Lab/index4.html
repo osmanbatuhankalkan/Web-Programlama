@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Küre Hacmi Hesaplama</title>
+</head>
+<body>
+  <h2>Küre Hacmi Hesaplama</h2>
+  <label for="radiusInput">Yarıçapı Girin:</label>
+  <input type="number" id="radiusInput">
+  <button onclick="calculateVolume()">Hacmi Hesapla</button>
+  <p id="result"></p>
+
+  <script>
+    function calculateVolume() {
+      var radius = parseFloat(document.getElementById("radiusInput").value);
+      if (isNaN(radius) || radius <= 0) {
+        document.getElementById("result").textContent = "Lütfen geçerli bir yarıçap değeri girin.";
+        return;
+      }
+      var volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+      document.getElementById("result").textContent = "Kürenin hacmi: " + volume.toFixed(2) + " birim küp";
+    }
+  </script>
+</body>
+</html>
